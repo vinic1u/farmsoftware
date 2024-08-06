@@ -1,11 +1,11 @@
-import { createStandaloneToast, Table, TableCaption, TableContainer, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react";
+import { createStandaloneToast, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
 const VisualizarProdutos = () => {
     
     const [data,setData] = useState();
-    const { ToastContainer, toast } = createStandaloneToast();
+    const { toast } = createStandaloneToast();
     
 
 

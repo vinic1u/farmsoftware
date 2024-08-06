@@ -1,13 +1,11 @@
 import { Button, Flex, NumberInput, NumberInputField, useToast } from "@chakra-ui/react";
 import { useState } from "react";
-import { createStandaloneToast, Table, TableCaption, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
 import axios from "axios";
 
 const FormularioExcluir = () => {
 
     const toast = useToast();
     const [produtoId,setProdutoId] = useState();
-    const [data,setData] = useState();
 
     const handleProdutoInput = (event) => {
         setProdutoId(event.target.value);
@@ -44,29 +42,6 @@ const FormularioExcluir = () => {
         }
     }
 
-    const renderizarDados = () => {
-        return (
-            <div>
-                <TableContainer>
-                    <Table variant='simple'>
-                        <TableCaption>Produtos em Estoque</TableCaption>
-                        <Thead>
-                            <Tr>
-                                <Th>Id</Th>
-                                <Th>Nome</Th>
-                                <Th>Tipo</Th>
-                                <Th>Descricao</Th>
-                                <Th>Quantidade Em Estoque</Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody> 
-                            
-                        </Tbody>
-                    </Table>
-                </TableContainer>
-            </div>
-        )};
-
     return (
         <div>
             <Flex gap={4} >
@@ -79,7 +54,7 @@ const FormularioExcluir = () => {
                 </NumberInput>
                 <Button onClick={excluirProduto}>Excluir Produto</Button>
             </Flex>
-            {data ? renderizarDados() : <div></div>}
+
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import {Box, Button,Flex, Text } from "@chakra-ui/react"
+import {Button,Flex, Text } from "@chakra-ui/react"
 import FormularioCadastro from "../components/FormularioCadastro"
 import { useState } from "react"
 import VisualizarProdutos from "../components/VisualizarProdutos"
