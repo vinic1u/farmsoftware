@@ -15,22 +15,25 @@ const FormularioExcluir = () => {
 
     const excluirProduto =  async () => {
         try{
+            const produto = await axios.get("http://localhost:8080/item/"+produtoId);
             const response = await axios.delete("http://localhost:8080/item/"+produtoId);
-            console.log(response);
-            if(response.data.status !== 200) {
+            
+            if(!produto.data.name) {
                 return toast({
-                    title: 'Falha ao Deletar',
+                    title: 'Produto nao Encontrado',
                     status: 'error',
                     duration: 2500,
                     isClosable: true,
                   })
             }
+
             return  toast({
                 title: 'Produto Deletado',
                 status: 'success',
                 duration: 2500,
                 isClosable: true,
               })
+
         }catch(error){
             return toast({
                 title: 'Falha ao Deletar',

@@ -43,7 +43,18 @@ const FormularioEditar = () => {
 
     const buscarProduto = async () => {
         try{
+            const produto = await axios.get("http://localhost:8080/item/"+produtoId);
             const response = await axios.get("http://localhost:8080/item/"+produtoId);
+           
+            if(!produto.data.name) {
+                return toast({
+                    title: 'Produto nao Encontrado',
+                    status: 'error',
+                    duration: 2500,
+                    isClosable: true,
+                  })
+            }
+            
             if(response.data.name ){
                  setProduto(response.data);
             }

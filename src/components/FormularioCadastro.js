@@ -42,6 +42,7 @@ const FormularioCadastro = () => {
             if(response.status !== 201){
                 return toast({
                     title: 'Falha ao Cadastrar',
+                    description: "Preencha todos os campos Corretamente",
                     status: 'error',
                     duration: 2500,
                     isClosable: true,
